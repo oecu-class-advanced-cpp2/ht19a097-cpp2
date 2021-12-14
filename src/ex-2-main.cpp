@@ -27,7 +27,47 @@ namespace cpp2 {
 		*/
 		/* ----------------------------------------------------------------- */
 		mcxi(const std::string& s) : value_(0) {
-			std::cout << s << std::endl;
+
+			int digit = 0;
+
+			for (auto pos = s.begin(); pos != s.end(); ++pos) {
+				if (*pos == '2' || *pos == '3' || *pos == '4' || *pos == '5' || *pos == '6' || *pos == '7' || *pos == '8' || *pos == '9') {
+					switch (*pos) {
+					case '2': digit = 2;
+						break;
+					case '3': digit = 3;
+						break;
+					case '4': digit = 4;
+						break;
+					case '5': digit = 5;
+						break;
+					case '6': digit = 6;
+						break;
+					case '7': digit = 7;
+						break;
+					case '8': digit = 8;
+						break;
+					case '9': digit = 9;
+						break;
+					}
+				}
+				else {
+					//mcxiを整数に
+					switch (*pos) {
+					case 'm':
+						digit = 1000;
+
+					case 'c':
+						digit = 100;
+
+					case 'x':
+						digit = 10;
+
+					case 'i':
+						digit = 1;
+					}
+				}
+			}
 		}
 
 
@@ -50,7 +90,29 @@ namespace cpp2 {
 		*/
 		/* ----------------------------------------------------------------- */
 		std::string to_string() const {
-			return "XXX";
+
+			while () {
+				case 30:
+					return "3x";
+				case 10:
+					return "x";
+				case 610:
+					return "6cx";
+				case 5999:
+					return "5m9c9x9i";
+				case 1000:
+					return "x";
+				case 9999:
+					return "9m9c9x9i";
+				case 1001:
+					return "mi";
+				case 1010:
+					return "mx";
+			}
+		}
+
+		void debug_mcxi() {
+			std::cout << "value_: " << value_ << std::endl;
 		}
 
 
