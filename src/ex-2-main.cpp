@@ -171,4 +171,5 @@ int main() {
 	cpp2::mcxi b9("c2x8i");
 	auto result9 = a9 + b9;
 	std::cout << "9m9c9x9i" << " " << result9.to_string() << std::endl;
+	
 }
