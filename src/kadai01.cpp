@@ -11,6 +11,7 @@
 *
 */
 /* -------------------------------------------------------------- */
+
 bool is_prime(unsigned int x) {
 	//2～x-1までの数がｘを割れるか判定する
 	//割れたら即falseを返す
@@ -33,6 +34,7 @@ bool is_prime(unsigned int x) {
 	}
 	return true;
 }
+
 /* --------------------------------------------------------------- */
 /*
 * nth_prime
@@ -46,21 +48,22 @@ bool is_prime(unsigned int x) {
 /* -------------------------------------------------------------- */
 int nth_prime(unsigned int a, unsigned int d, unsigned int n) {
 
-	int k = a;
+	int k;
 	int s;
 
-	int p[], in[];
+	int p[1000],in[1000];
 
-	for (int i = 0; i < 100; i++) {
+	for (int i = 0; i < 300; i++) {
 		//std::cout << i << std::endl;
-		k = k + (i * d);
-		std::cout << k << std::endl;
+		k = a + (i * d);
+		//std::cout << i <<" : "<< k << std::endl;
 
 		in[i] = k;
 
-		//is_primeの返り値が１であった場合、素数用配列のi番目に整数用配列のi番目の値をいれる
+		//is_primeの返り値が１であった場合、素数用配列に整数用配列のi番目の値をいれる
 		if (is_prime(in[i]) == 1) {
-			p[] = in[i];
+			p[i] = in[i];
+
 		}
 	}
 
@@ -71,10 +74,7 @@ int nth_prime(unsigned int a, unsigned int d, unsigned int n) {
 }
 
 int main() {
-	std::cout << is_prime(2351) << std::endl;
-	std::cout << is_prime(1566) << std::endl;
-	std::cout << is_prime(3461) << std::endl;
-	//std::cout << nth_prime(367, 186, 151) << std::endl;
+	 std::cout << nth_prime(367, 186, 151) << std::endl;
 	// 以下、同様に、入出力例通りになるか確認せよ。
 
 	system("pause");
